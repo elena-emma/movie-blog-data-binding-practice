@@ -1,0 +1,14 @@
+<div class="row p-2">
+  
+  <div class="col-8">
+    <app-movies-list [movies]="movies"></app-movies-list>
+  </div>
+  <div class="col-4 bg-light p-2">
+    <h5>My shoping cart</h5>
+    <hr>
+    <app-movie-details *ngIf="selectedMovie; else infoText" [movie]="selectedMovie"></app-movie-details>
+    <ng-template #infoText>
+      <p>The cart is empty</p>
+    </ng-template>
+  </div>
+</div>
