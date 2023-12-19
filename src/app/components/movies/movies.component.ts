@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { DataService } from '../../service/data.service';
 import { MovieCardComponent } from './movies-list/movie-card/movie-card.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
-import { MovieDetailsComponent } from './movies-list/movie-card/movie-details/movie-details.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { SideMenuComponent } from './movies-list/side-menu/side-menu.component';
-import { ShopingCartComponent } from './movies-list/shoping-cart/shoping-cart.component';
+import { ShopingCartComponent } from './shoping-cart/shoping-cart.component';
 
 @Component({
   selector: 'app-movies',
@@ -24,9 +24,8 @@ import { ShopingCartComponent } from './movies-list/shoping-cart/shoping-cart.co
 })
 export class MoviesComponent implements OnInit {
   service = inject(DataService);
-  selectedMovie: any;
   movies: any;
-
+  selectedMovie: any;
 
   constructor() {
     this.service.movieSelected.subscribe({

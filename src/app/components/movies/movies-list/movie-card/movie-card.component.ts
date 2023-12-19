@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DataService } from '../../../../service/data.service';
 import { MoviesComponent } from '../../movies.component';
 import { RouterLink } from '@angular/router';
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { MovieDetailsComponent } from '../../movie-details/movie-details.component';
 import { MoviesListComponent } from '../movies-list.component';
 
 @Component({

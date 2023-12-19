@@ -1,6 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DataService } from '../../../../../service/data.service';
+import { DataService } from '../../../service/data.service';
 
 @Component({
   selector: 'app-movie-details',
@@ -11,8 +11,6 @@ import { DataService } from '../../../../../service/data.service';
 })
 export class MovieDetailsComponent {
   @Input() movie: any;
-  
-  service=inject(DataService); 
   
   constructor() {}
 
