@@ -1,6 +1,6 @@
 
   <div class="card m-2" style="width: 18rem;">
-    <a href="#" class="list-group-item clearfix" (click)="onSelected()">
+    <a href="#" class="list-group-item clearfix" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="onSelected()">
       <img [src]="movie.background_image" class="card-img-top" [alt]="movie.name">
       <div class="card-body">
         <h5 class="card-title">{{ movie.name }}</h5>
