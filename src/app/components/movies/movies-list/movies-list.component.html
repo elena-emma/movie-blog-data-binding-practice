@@ -2,7 +2,7 @@
   <div class="col-3 p-2">
     <app-side-menu [results]="movies.results"></app-side-menu>
   </div>
-  <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" tabindex="0">
+  <div data-bs-spy="scroll" data-bs-smooth-scroll="true" tabindex="0">
     <div class="d-flex flex-row flex-wrap">
       <app-movie-card *ngFor="let result of movies.results" [movie]="result">
       </app-movie-card>

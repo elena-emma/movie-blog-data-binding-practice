@@ -3,13 +3,21 @@ import { CommonModule } from '@angular/common';
 import { DataService } from '../../service/data.service';
 import { MovieCardComponent } from './movies-list/movie-card/movie-card.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { MovieDetailsComponent } from './movies-list/movie-card/movie-details/movie-details.component';
 import { SideMenuComponent } from './movies-list/side-menu/side-menu.component';
+import { ShopingCartComponent } from './movies-list/shoping-cart/shoping-cart.component';
 
 @Component({
   selector: 'app-movies',
   standalone: true,
-  imports: [CommonModule, MovieCardComponent, MoviesListComponent, MovieDetailsComponent, SideMenuComponent ],
+  imports: [
+    CommonModule,
+    MovieCardComponent,
+    MoviesListComponent,
+    MovieDetailsComponent,
+    SideMenuComponent,
+    ShopingCartComponent
+  ],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.css',
   providers: [DataService],
@@ -17,19 +25,18 @@ import { SideMenuComponent } from './movies-list/side-menu/side-menu.component';
 export class MoviesComponent implements OnInit {
   service = inject(DataService);
   selectedMovie: any;
-movies:any;
+  movies: any;
 
-constructor() {
-  this.service.movieSelected.subscribe({
-        next: (res: any) => (this.selectedMovie= res)
-      });
-}
-  
+
+  constructor() {
+    this.service.movieSelected.subscribe({
+      next: (res: any) => (this.selectedMovie = res),
+    });
+  }
+
   ngOnInit() {
     return this.service.getMovies().subscribe({
-      next: (res: any) => (this.movies= res),
+      next: (res: any) => (this.movies = res),
     });
-  
   }
-  
 }
