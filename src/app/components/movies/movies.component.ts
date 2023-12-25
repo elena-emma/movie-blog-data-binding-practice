@@ -26,16 +26,21 @@ export class MoviesComponent implements OnInit {
   service = inject(DataService);
   movies: any;
   selectedMovie: any;
+  previewedMovie: any;
 
   constructor() {
-    this.service.movieSelected.subscribe({
-      next: (res: any) => (this.selectedMovie = res),
+    this.service.getMovies().subscribe({
+      next: (res: any) => (this.movies = res),
     });
   }
 
   ngOnInit() {
-    return this.service.getMovies().subscribe({
-      next: (res: any) => (this.movies = res),
+    this.service.movieSelected.subscribe({
+      next: (res: any) => (this.selectedMovie = res),
     });
+    this.service.moviePreviewed.subscribe({
+      next: (res: any) => (this.previewedMovie = res),
+    });
+    
   }
 }

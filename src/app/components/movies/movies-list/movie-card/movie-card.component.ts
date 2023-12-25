@@ -25,7 +25,9 @@ ngOnInit() {
 onSelected(){
 this.service.movieSelected.emit(this.movie)
 }
-
+ onPreview() {
+  this.service.moviePreviewed.emit(this.movie)
+ }
 
 }
 

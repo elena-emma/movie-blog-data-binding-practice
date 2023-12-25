@@ -5,8 +5,16 @@
         <h5 class="card-title">{{ movie.name }}</h5>
         <p class="card-text">{{movie.rating}}
         </p>
-        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="onSelected()">Details</a>
-        <a class="btn btn-primary" (click)="onSelected()">Add to cart</a>
+        <div class="row">
+          <div class="col">
+            <a class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="onPreview()">Details</a>
+          </div>
+          <div class="col text-end">
+            <a class="btn btn-primary" (click)="onSelected()">Add to cart</a>
+          </div>
+          
+        </div>
+        
       </div>
   </div>
 

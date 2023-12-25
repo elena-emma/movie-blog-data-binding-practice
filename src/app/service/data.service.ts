@@ -6,7 +6,7 @@ import { EventEmitter, Injectable, inject } from '@angular/core';
 })
 export class DataService {
 movieSelected = new EventEmitter<any>();
-
+moviePreviewed = new EventEmitter<any>();
 
 http = inject(HttpClient);
 

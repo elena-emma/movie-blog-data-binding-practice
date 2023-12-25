@@ -16,7 +16,6 @@ export class MoviesListComponent implements OnInit{
 // service=inject(DataService)
 @Input()movies: any;
 
-service=inject(DataService);
 
 ngOnInit() {
   

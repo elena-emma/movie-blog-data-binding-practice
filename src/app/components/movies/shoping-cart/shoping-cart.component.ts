@@ -1,4 +1,4 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../../service/data.service';
 
@@ -10,12 +10,21 @@ import { DataService } from '../../../service/data.service';
   templateUrl: './shoping-cart.component.html',
   styleUrl: './shoping-cart.component.css'
 })
-export class ShopingCartComponent {
-
-  @Input() movie : any;
+export class ShopingCartComponent implements OnInit {
+@Input() movie: any;
+movies: any[]=[];
+  service=inject(DataService)
   constructor(){
 
   };
-  
+  ngOnInit() {
+    this.movies = [this.movie];
+    this.service.movieSelected
+      .subscribe(
+        (movie) => {
+          this.movies.push(movie);
+        }
+      );
 
-}
+      }
+    }

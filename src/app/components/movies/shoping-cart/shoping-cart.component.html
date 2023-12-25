@@ -1,2 +1,14 @@
-<p>shoping-cart works!</p>
-{{movie.name}}
+
+<div class="row">
+    <div class="col-xs-10">
+      <ul class="list-group">
+        <a
+          class="list-group-item"
+          style="cursor: pointer"
+          *ngFor= "let movie of movies"
+        >
+          {{ movie.name }} 
+        </a>
+      </ul>
+    </div>
+  </div>

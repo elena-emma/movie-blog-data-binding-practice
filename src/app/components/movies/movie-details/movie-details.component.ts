@@ -1,4 +1,4 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../../service/data.service';
 
@@ -9,12 +9,12 @@ import { DataService } from '../../../service/data.service';
   templateUrl: './movie-details.component.html',
   styleUrl: './movie-details.component.css'
 })
-export class MovieDetailsComponent {
+export class MovieDetailsComponent implements OnInit {
   @Input() movie: any;
-  
-  constructor() {}
+  service=inject(DataService);
+  constructor() {};
 
-  ngOnInit() {}
+  ngOnInit() {};
  
 }
 
